@@ -21,14 +21,7 @@ resource "aws_instance" "WebServer" {
   ami           = "ami-02354e95b39ca8dec"
   instance_type = "t2.micro"
   security_groups = [aws_security_group.webtraffic.name]
-  user_data     = <<-EOF
-                  #!/bin/bash
-                  sudo su
-                  yum -y install httpd
-                  echo "<p> WebServer! </p>" >> /var/www/html/index.html
-                  sudo systemctl enable httpd
-                  sudo systemctl start httpd
-                  EOF
+  user_data     = file ("server-script.sh")
  tags = {
         Name = "nlamsweb01"
    }
