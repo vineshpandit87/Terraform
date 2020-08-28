@@ -27,7 +27,7 @@ module "ec2thirdmodule" {
     source = "./ec2"
     ec2name = "nlamsnw03"
     
-  
+  ###Output###
 }
 output "nlamsnw03id"{
     value = module.ec2thirdmodule.instance_id
