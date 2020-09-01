@@ -16,7 +16,7 @@ module "web_server" {
 
 module "eip" {
     source = "./eip"
-    instance_web_id = module.web_server.instance_web_id
+    instance_web_id = module.web_server.instance_web_out
 
 }
 

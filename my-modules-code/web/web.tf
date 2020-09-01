@@ -8,7 +8,7 @@ resource "aws_instance" "web" {
   }
 }
 
-output "instance_web_id" {
+output "instance_web_out" {
     value = aws_instance.web.id
 }
 output "instance_eip_id" {

@@ -8,7 +8,7 @@ output "EC2_DB_ID" {
 }
 
 output "EC2_WEB_ID" {
-  value = module.web_server.instance_web_id
+  value = module.web_server.instance_web_out
 }
 
 output "EC2_EIP" {
