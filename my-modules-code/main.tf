@@ -10,12 +10,14 @@ module "db_server" {
 module "web_server" {
     source = "./web"
     instance_web_name = "Web Server"
-  instance_sec_name = module.sg.sg_name_id_out
+    instance_sec_name = module.sg.sg_name_id_out
+    
 }
 
 module "eip" {
     source = "./eip"
-    instance_web_id = "web_eip"
+    instance_web_id = module.web_server.instance_web_id
+
 }
 
 module "sg" {
