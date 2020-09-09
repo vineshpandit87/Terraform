@@ -3,8 +3,11 @@ provider "aws" {
 }
 module "db" {
     source = "./db"
-    server_names = ["mariadb","mysqldb","sqldb"]
+    server_names = ["mariadb","mysqldb"]
 }
 output "private_ips" {
     value = module.db.PrivateIP
+}
+output "ec2_names" {
+    value = module.db.name
 }
